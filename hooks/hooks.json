@@ -1,0 +1,60 @@
+[
+  {
+    "id": "new",
+    "response-headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "execute-command": "/hooks/scripts/new.sh",
+    "pass-arguments-to-command":
+    [
+      {
+        "source": "payload",
+        "name": "pr"
+      },
+      {
+        "source": "payload",
+        "name": "branch"
+      }
+    ],
+    "include-command-output-in-response": true
+  },
+  {
+    "id": "sync",
+    "response-headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "execute-command": "/hooks/scripts/sync.sh",
+    "pass-arguments-to-command":
+    [
+      {
+        "source": "payload",
+        "name": "pr"
+      }
+    ],
+    "include-command-output-in-response": true
+  },
+  {
+    "id": "delete",
+    "response-headers": [
+      {
+        "name": "Content-Type",
+        "value": "application/json"
+      }
+    ],
+    "execute-command": "/hooks/scripts/delete.sh",
+    "pass-arguments-to-command":
+    [
+      {
+        "source": "payload",
+        "name": "pr"
+      }
+    ],
+    "include-command-output-in-response": true
+  }
+]

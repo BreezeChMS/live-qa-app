@@ -1,0 +1,18 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+    command: ["/bin/sh git reset --hard && git checkout --track -b origin/BRANCH_NAME && git pull"]
+    expose:
+      - 80
+    environment:
+      VIRTUAL_HOST: PR_NUMBER.hopingthis.works
+      LETSENCRYPT_HOST: PR_NUMBER.hopingthis.works
+      LETSENCRYPT_EMAIL: ssl@hopingthis.works
+    restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
