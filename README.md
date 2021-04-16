@@ -4,8 +4,8 @@ Take any Linux box or vm and convert it into a Docker-powered system to spin up 
 ## Installation
 
 __Pre-requisites:__
-- Ubuntu 18+
-- Docker, Docker-Compose, and Git installed
+- Ubuntu 18+, 20+
+- [Docker](https://docs.docker.com/engine/install/ubuntu/), [Docker-Compose](https://docs.docker.com/compose/install/), and Git installed
 - Wilcard second-level domain DNS pointing to this system
 
 __Instructions:__
